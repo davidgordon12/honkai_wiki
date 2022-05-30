@@ -1,14 +1,15 @@
 ﻿@page "/valkyries"
 
-<h1 class="mt-3">Valkyries</h1>
-
 <style>
     #valkyries {
         display: grid;
         grid-template-columns: 100px repeat(auto-fill, 100px) 110px;
-        grid-gap: 40px;
+        grid-gap: 30px;
     }
 </style>
+
+<h1 class="mt-3">Valkyries</h1>
+<h4>Filter by type:</h4>
 
 <div id="valkyries">
     <!--
@@ -17,8 +18,28 @@
             <InfoCard Name="valkyrie.Name" Image="valkyrie.Image"></InfoCard>
         }
     -->
-    <InfoCard Name="Kiana" Image="images/portrait-wc.png"></InfoCard>
-    <InfoCard Name="Mei" Image="images/portrait-vb.png"></InfoCard>
+    <InfoCard Name="Kiana Kaslana" Image="images/portrait-wc.png"></InfoCard>
+    <InfoCard Name="Raiden Mei" Image="images/portrait-ci.png"></InfoCard>
+    <InfoCard Name="Bronya Zaychik" Image="images/portrait-vc.png"></InfoCard>
+    <InfoCard Name="Murata Himeko" Image="images/portrait-bs.png"></InfoCard>
+    <InfoCard Name="Yae Sakura" Image="images/portrait-miko.png"></InfoCard>
+    <InfoCard Name="Theresa Apocalypse" Image="images/portrait-vp.png"></InfoCard>
+    <InfoCard Name="Fu Hua" Image="images/portrait-va.png"></InfoCard>
+    <InfoCard Name="Kallen Kaslana" Image="images/portrait-ri.png"></InfoCard>
+    <InfoCard Name="Rita Rossweisse" Image="images/portrait-ur.png"></InfoCard>
+    <InfoCard Name="Liliya Olenyeva" Image="images/portrait-bb.png"></InfoCard>
+    <InfoCard Name="Rozaliya Olenyeva" Image="images/portrait-mc.png"></InfoCard>
+    <InfoCard Name="Seele Vollerei" Image="images/portrait-sp.png"></InfoCard>
+    <InfoCard Name="Durandal" Image="images/portrait-vg.png"></InfoCard>
+    <InfoCard Name="Asuka" Image="images/portrait-bh.png"></InfoCard>
+    <InfoCard Name="Fischl" Image="images/portrait-pv.png"></InfoCard>
+    <InfoCard Name="Elysia" Image="images/portrait-mpe.png"></InfoCard>
+    <InfoCard Name="Mobius" Image="images/portrait-io.png"></InfoCard>
+    <InfoCard Name="Natasha Cioara" Image="images/portrait-ma.png"></InfoCard>
+    <InfoCard Name="Carole Pepper" Image="images/portrait-sns.png"></InfoCard>
+    <InfoCard Name="Pardofelis" Image="images/portrait-rc.png"></InfoCard>
+    <InfoCard Name="Aponia" Image="images/portrait-aponia.png"></InfoCard>
+    <InfoCard Name="Eden" Image="images/portrait-eden.png"></InfoCard>
 </div>
 
 @code {
