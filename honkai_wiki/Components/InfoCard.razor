@@ -1,0 +1,42 @@
+﻿<style>
+    #card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 120px;
+        height: 140px;
+        border: 1px solid grey;
+        border-radius: 10px;
+    }
+
+    #headshot {
+        height: 100px;
+        width: 100px;
+        border-radius: 6px;
+    }
+
+    #valk {
+        padding-top: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
+
+<div id="card">
+    <a href="" id="valk">
+        <img id="headshot" src="@Image"
+        <a href="">@Name</a>
+    </a>
+</div>
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "Kiana";
+
+    [Parameter]
+    public string Image { get; set; } = "images/portrait-wc.png";
+}
