@@ -28,7 +28,7 @@
 
 
 <div id="card">
-    <a href="" id="valk">
+    <a href="@Redirect" id="valk">
         <img id="headshot" src="@Image"
         <a href="">@Name</a>
     </a>
@@ -40,4 +40,10 @@
 
     [Parameter]
     public string Image { get; set; } = "images/valkyries/portrait-wc.png";
+
+    [Parameter]
+    public string Redirect { get; set; } = "battlesuits";
+
+    [Parameter]
+    public string Filter { get; set; } = "Kiana";
 }
