@@ -45,7 +45,7 @@
         }
 
         .nav-item ::deep a:hover {
-            background-color: #c7b5c1; /* PINK */
+            background-color: #C7B5C1; /* PINK */
             color: white;
         }
 

@@ -4,11 +4,3 @@ html, body {
     font-family: Bahnschrift
 }
 
-h1:focus {
-    border: none;
-    outline: none;
-}
-
-#content {
-    margin-top: 20px;
-}
