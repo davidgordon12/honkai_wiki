@@ -10,6 +10,12 @@
         overflow: hidden;
     }
 
+    #card:hover {
+        cursor: pointer;
+        background-color: #c7b5c1;
+        color: white;
+    }
+
     #headshot {
         height: 100px;
         width: 100px;
@@ -17,21 +23,19 @@
     }
 
     #valk {
-        padding-top: 10px;
+        padding-top: 6px;
     }
 
-    a {
-        text-decoration: none;
-        color: black;
+    h6 {
+        padding-top: 5px;
     }
 </style>
 
-
 <div id="card">
-    <a href="@Redirect" id="valk">
+    <div id="valk">
         <img id="headshot" src="@Image"
-        <a href="">@Name</a>
-    </a>
+        <h6>@Name</h6>
+    </div>
 </div>
 
 @code {
@@ -40,10 +44,4 @@
 
     [Parameter]
     public string Image { get; set; } = "images/valkyries/portrait-wc.png";
-
-    [Parameter]
-    public string Redirect { get; set; } = "battlesuits";
-
-    [Parameter]
-    public string Filter { get; set; } = "Kiana";
 }
