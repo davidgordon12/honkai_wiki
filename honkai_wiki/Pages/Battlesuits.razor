@@ -1,6 +1,30 @@
 ﻿@page "/battlesuits"
 
+<style>
+    h1:focus {
+        border: none;
+        outline: none;
+    }
+
+    #filters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+</style>
+
 <h1 class="mt-3">Battlesuits</h1>
+<h4 class="mt-3">Filter by Type:</h4>
+
+<div id="filters">
+    <Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/mecha.png" Type="Mech"></Filter>
+    <Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/biologic.png" Type="Biologic"></Filter>
+    <Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/psychic.png" Type="Pyschic"></Filter>
+    <Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/imaginary.png" Type="Imaginary"></Filter>
+    <Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Quantum"></Filter>
+</div>
+
+<h4 class="mt-3">Filter by Specialty:</h4>
 
 @code {
     private string? Filter { get; set; }
