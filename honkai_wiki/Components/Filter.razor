@@ -1,5 +1,47 @@
-﻿<h3>Filter</h3>
+﻿<style>
+    #filter {
+        height: 40px;
+        width: fit-content;
+        text-align: right;
+        border: 1px solid grey;
+        border-radius: 6px;
+        padding-inline: 10px;
+        margin-right: 10px;
+    }
+
+    #filter > h6 {
+        line-height: 40px;
+        padding-left: 35px;
+    }
+
+    #filter:hover {
+        cursor: pointer;
+        background-color: #C7B5C1;
+        color: white;
+    }
+
+    #filter:active {
+        background-color: #B5C7BC;
+        color: black;
+    }
+
+    #filter > img {
+        height: 30px;
+        float: left;
+        padding-right: 5px;
+        margin-top: 0.25rem;
+    }
+</style>
+
+<div id="filter">
+    <img src="@Icon"/>
+    <h6>@Type</h6>
+</div>
 
 @code {
+    [Parameter]
+    public string Icon { get; set; } = "https://public-assets.abyss-lab.app/honkai3rd/type-icons/mecha.png";
 
+    [Parameter]
+    public string Type { get; set; } = "Mech";
 }
