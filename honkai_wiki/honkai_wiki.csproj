@@ -28,4 +28,8 @@
     <None Include="Components\InfoCard.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services" />
+  </ItemGroup>
+
 </Project>
