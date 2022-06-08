@@ -1,4 +1,5 @@
 using honkai_wiki;
+using honkai_wiki.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -15,7 +16,9 @@ builder.Services.AddScoped(sp =>
 builder.Services.AddScoped(sp =>
     new HttpClient
     {
-        BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+        BaseAddress = new Uri("https://localhost:7061")
     });
+
+builder.Services.AddScoped<IValkyrieService, ValkyrieService>();
 
 await builder.Build().RunAsync();
