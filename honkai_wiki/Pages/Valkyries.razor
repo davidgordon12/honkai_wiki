@@ -13,24 +13,16 @@
 
 <h1 class="mt-3">Valkyries</h1>
 
-@if (v is null)
-{
-    <h3>Out for vacation, be back soon! :) @msg</h3>
-}
-else
-{
-    <div id="valkyries">
-        @foreach (var valk in v)
-        {
-            <InfoCard Name="@valk.Name" Image="@valk.Image"></InfoCard>
-        }
-    </div>
-}
+<div id="valkyries">
+    @foreach(var v in v)
+    {
+        <InfoCard Name="@v.Name" Image="@v.Image"></InfoCard>
+    }
+</div>
 
 @code {
-    List<Valkyrie>? v;
-    protected override async Task OnInitializedAsync()
-    {
+    List<Valkyrie>? v = new List<Valkyrie>();
+    protected override async Task OnInitializedAsync() =>
         v = await ValkyrieService.GetValkyries();
-    }
+
 }
