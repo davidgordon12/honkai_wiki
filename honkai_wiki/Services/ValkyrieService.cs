@@ -19,5 +19,10 @@ namespace honkai_wiki.Services
             var content = await _httpClient.GetStringAsync(url);
             return JsonConvert.DeserializeObject<List<Valkyrie>>(content);
         }
+
+        public Task<Valkyrie> GetValkyrie(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
