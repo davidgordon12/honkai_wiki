@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using honkai_wiki_api.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace honkai_wiki.Services
 {
@@ -16,7 +17,8 @@ namespace honkai_wiki.Services
 
         public async Task<List<Valkyrie>> GetValkyries()
         {
-            var content = await _httpClient.GetStringAsync(url);
+            var contentWithRoot = await _httpClient.GetStringAsync(url);
+            var content = JObject.Parse(contentWithRoot)["value"].ToString(Formatting.None);
             return JsonConvert.DeserializeObject<List<Valkyrie>>(content);
         }
 
