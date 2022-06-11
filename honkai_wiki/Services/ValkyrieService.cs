@@ -15,14 +15,14 @@ namespace honkai_wiki.Services
             _httpClient = httpClient;
         }
 
-        public async Task<List<Valkyrie>> GetAsync()
+        public async Task<List<Valkyrie>> GetValkyries()
         {
             var contentWithRoot = await _httpClient.GetStringAsync(url);
             var content = JObject.Parse(contentWithRoot)["value"].ToString(Formatting.None);
             return JsonConvert.DeserializeObject<List<Valkyrie>>(content);
         }
 
-        public Task<Valkyrie> GetAsync(int id)
+        public Task<Valkyrie> GetValkyrie(int id)
         {
             throw new NotImplementedException();
         }

@@ -19,6 +19,6 @@ builder.Services.AddScoped(sp =>
         BaseAddress = new Uri("https://localhost:7061")
     });
 
-builder.Services.AddScoped<IHonkaiService, ValkyrieService>();
+builder.Services.AddScoped<IValkyrieService, ValkyrieService>();
 
 await builder.Build().RunAsync();
