@@ -23,6 +23,6 @@
 @code {
     List<Valkyrie>? v = new List<Valkyrie>();
     protected override async Task OnInitializedAsync() =>
-        v = await ValkyrieService.GetValkyries();
+        v = await ValkyrieService.GetValkyriesAsync();
 
 }
