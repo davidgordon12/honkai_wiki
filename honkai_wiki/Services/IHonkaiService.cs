@@ -2,7 +2,7 @@
 
 namespace honkai_wiki.Services
 {
-    public interface IValkyrieService
+    public interface IHonkaiService
     {
         Task<List<Valkyrie>> GetValkyries();
         Task<Valkyrie> GetValkyrie(int id);
