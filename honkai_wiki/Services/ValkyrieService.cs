@@ -1,4 +1,4 @@
-﻿using System.Net.Http.Json;
+using System.Net.Http.Json;
 using honkai_wiki_api.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -8,7 +8,7 @@ namespace honkai_wiki.Services
     public class ValkyrieService : IValkyrieService
     {
         private readonly HttpClient _httpClient;
-        private const string url = "https://localhost:7061/valkyries";
+        private const string url = "https://honkaiwiki-api.azurewebsites.net/valkyries";
 
         public ValkyrieService(HttpClient httpClient)
         {
