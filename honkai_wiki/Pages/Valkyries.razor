@@ -1,7 +1,8 @@
 ﻿@page "/valkyries"
+@using Newtonsoft.Json
 @using honkai_wiki.Services
 @using honkai_wiki_api.Models
-@inject IValkyrieService ValkyrieService
+@inject IHonkaiService ValkyrieService
 
 <style>
     #valkyries {
@@ -23,6 +24,5 @@
 @code {
     List<Valkyrie>? v = new List<Valkyrie>();
     protected override async Task OnInitializedAsync() =>
-        v = await ValkyrieService.GetValkyriesAsync();
-
+        v = JsonConvert.DeserializeObject<List<Valkyrie>>(await ValkyrieService.GetValkyriesAsync());
 }
