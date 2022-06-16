@@ -26,5 +26,5 @@
 @code {
     List<Stigmata>? s = new List<Stigmata>();
     protected override async Task OnInitializedAsync() =>
-        s = JsonConvert.DeserializeObject<List<Stigmata>>(await StigmatasService.GetValkyriesAsync());
+        s = JsonConvert.DeserializeObject<List<Stigmata>>(await StigmatasService.GetAsync());
 }

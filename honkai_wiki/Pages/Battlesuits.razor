@@ -60,5 +60,5 @@
 @code {
     List<Battlesuit>? b = new List<Battlesuit>();
     protected override async Task OnInitializedAsync() =>
-        b = JsonConvert.DeserializeObject<List<Battlesuit>>(await BattlesuitService.GetValkyriesAsync());
+        b = JsonConvert.DeserializeObject<List<Battlesuit>>(await BattlesuitService.GetAsync());
 }

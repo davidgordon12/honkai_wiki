@@ -26,5 +26,5 @@
 @code {
 List<Weapon>? w = new List<Weapon>();
     protected override async Task OnInitializedAsync() =>
-        w = JsonConvert.DeserializeObject<List<Weapon>>(await WeaponsService.GetValkyriesAsync());
+        w = JsonConvert.DeserializeObject<List<Weapon>>(await WeaponsService.GetAsync());
 }
