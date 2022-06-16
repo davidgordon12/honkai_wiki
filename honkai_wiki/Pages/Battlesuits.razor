@@ -40,8 +40,25 @@
     <Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/rank-icons/b-rank.png" Type="B Rank"></Filter>
 </div>
 
+<style>
+    #battlesuits {
+        display: grid;
+        grid-template-columns: 100px repeat(auto-fill, 100px) 110px;
+        grid-gap: 30px;
+    }
+</style>
+
+<h1 class="mt-3">Valkyries</h1>
+
+<div id="battlesuits">
+    @foreach(var b in b)
+    {
+        <InfoCard Name="@b.Name" Image="@b.Image"></InfoCard>
+    }
+</div>
+
 @code {
-    List<Battlesuits>? b = new List<Battlesuits>();
+    List<Battlesuit>? b = new List<Battlesuit>();
     protected override async Task OnInitializedAsync() =>
-        b = JsonConvert.DeserializeObject<List<Battlesuits>>(await BattlesuitService.GetValkyriesAsync());
+        b = JsonConvert.DeserializeObject<List<Battlesuit>>(await BattlesuitService.GetValkyriesAsync());
 }

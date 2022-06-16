@@ -5,7 +5,7 @@ namespace honkai_wiki.Services
 {
     public interface IHonkaiService
     {
-        Task<string> GetValkyriesAsync();
-        Task<string> GetValkyrieAsync(int id);
+        Task<string> GetAsync();
+        Task<string> GetAsync(int id);
     }
 }
