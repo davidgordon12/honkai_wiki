@@ -2,12 +2,12 @@
 {
     public class WeaponService : IHonkaiService
     {
-        public Task<string> GetValkyrieAsync(int id)
+        public Task<string> GetAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> GetValkyriesAsync()
+        public Task<string> GetAsync()
         {
             throw new NotImplementedException();
         }
