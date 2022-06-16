@@ -1,7 +1,13 @@
 ﻿@page "/weapons"
+@using Newtonsoft.Json
+@using honkai_wiki_api.Models
+@using honkai_wiki.Services
+@inject IHonkaiService WeaponsService
 
 <h1 class="mt-3">Weapons</h1>
 
 @code {
-
+List<Weapon>? w = new List<Weapon>();
+    protected override async Task OnInitializedAsync() =>
+        w = JsonConvert.DeserializeObject<List<Weapon>>(await WeaponsService.GetValkyriesAsync());
 }

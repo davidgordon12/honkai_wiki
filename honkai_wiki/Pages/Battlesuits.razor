@@ -41,7 +41,7 @@
 </div>
 
 @code {
-    List<Battlesuits>? v = new List<Battlesuits>();
+    List<Battlesuits>? b = new List<Battlesuits>();
     protected override async Task OnInitializedAsync() =>
-        v = JsonConvert.DeserializeObject<List<Battlesuits>>(await BattlesuitService.GetValkyriesAsync());
+        b = JsonConvert.DeserializeObject<List<Battlesuits>>(await BattlesuitService.GetValkyriesAsync());
 }

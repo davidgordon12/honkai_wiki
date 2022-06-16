@@ -1,3 +1,13 @@
 ﻿@page "/stigmatas"
+@using Newtonsoft.Json
+@using honkai_wiki_api.Models
+@using honkai_wiki.Services
+@inject IHonkaiService StigmatasService
 
 <h1 class="mt-3">Stigmatas</h1>
+
+@code {
+    List<Stigmata>? s = new List<Stigmata>();
+    protected override async Task OnInitializedAsync() =>
+        s = JsonConvert.DeserializeObject<List<Stigmata>>(await StigmatasService.GetValkyriesAsync());
+}
