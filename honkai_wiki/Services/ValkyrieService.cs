@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace honkai_wiki.Services
 {
-    public class ValkyrieService : IValkyrieService
+    public class ValkyrieService : IHonkaiService
     {
         private readonly HttpClient _httpClient;
         private const string url = "https://honkaiwiki-api.azurewebsites.net/valkyries";
@@ -15,14 +15,14 @@ namespace honkai_wiki.Services
             _httpClient = httpClient;
         }
 
-        public async Task<List<Valkyrie>> GetValkyriesAsync()
+        public async Task<string> GetValkyriesAsync()
         {
             var contentWithRoot = await _httpClient.GetStringAsync(url);
-            var content = JObject.Parse(contentWithRoot)["value"].ToString(Formatting.None);
-            return JsonConvert.DeserializeObject<List<Valkyrie>>(content);
+            return JObject.Parse(contentWithRoot)["value"].ToString(Formatting.None);
+            
         }
 
-        public Task<Valkyrie> GetValkyrieAsync(int id)
+        public Task<string> GetValkyrieAsync(int id)
         {
             throw new NotImplementedException();
         }
