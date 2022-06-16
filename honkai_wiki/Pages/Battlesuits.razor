@@ -1,4 +1,8 @@
 ﻿@page "/battlesuits"
+@using Newtonsoft.Json
+@using honkai_wiki_api.Models
+@using honkai_wiki.Services
+@inject IHonkaiService BattlesuitService
 
 <style>
     #filters {
@@ -37,5 +41,7 @@
 </div>
 
 @code {
-    
+    List<Battlesuits>? v = new List<Battlesuits>();
+    protected override async Task OnInitializedAsync() =>
+        v = JsonConvert.DeserializeObject<List<Battlesuits>>(await BattlesuitService.GetValkyriesAsync());
 }
