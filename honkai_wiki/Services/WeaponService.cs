@@ -1,6 +1,6 @@
 ﻿namespace honkai_wiki.Services
 {
-    public class WeaponService : IValkyrieService
+    public class WeaponService : IWeaponService
     {
         public Task<string> GetAsync(int id)
         {

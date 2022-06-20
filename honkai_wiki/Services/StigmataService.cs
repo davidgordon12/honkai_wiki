@@ -1,6 +1,6 @@
 ﻿namespace honkai_wiki.Services
 {
-    public class StigmataService : IValkyrieService
+    public class StigmataService : IStigmataService
     {
         public Task<string> GetAsync(int id)
         {
