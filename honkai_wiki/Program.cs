@@ -20,5 +20,8 @@ builder.Services.AddScoped(sp =>
     });
 
 builder.Services.AddScoped<IValkyrieService, ValkyrieService>();
+builder.Services.AddScoped<IWeaponService, WeaponService>();
+builder.Services.AddScoped<IBattlesuitService, BattlesuitService>();
+builder.Services.AddScoped<IStigmataService, StigmataService>();
 
 await builder.Build().RunAsync();
