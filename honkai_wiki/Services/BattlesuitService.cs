@@ -1,6 +1,6 @@
 ﻿namespace honkai_wiki.Services
 {
-    public class BattlesuitService : IHonkaiService
+    public class BattlesuitService : IValkyrieService
     {
         public Task<string> GetAsync(int id)
         {

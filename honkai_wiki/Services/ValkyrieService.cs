@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace honkai_wiki.Services
 {
-    public class ValkyrieService : IHonkaiService
+    public class ValkyrieService : IValkyrieService
     {
         private readonly HttpClient _httpClient;
         private const string url = "https://honkaiwiki-api.azurewebsites.net/valkyries";
