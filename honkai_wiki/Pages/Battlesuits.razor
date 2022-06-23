@@ -10,8 +10,9 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+
     #filter_btn {
-        display:contents;
+        display: contents;
     }
 </style>
 
@@ -19,28 +20,27 @@
 <h4 class="mt-3">Filter by Type:</h4>
 
 <div id="filters">
-    <button id="filter_btn" @onclick="FilterType"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/mecha.png" Type="Mech"></Filter></button>
-    <button id="filter_btn" @onclick="FilterType"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/biologic.png" Type="Biologic"></Filter></button>
-    <button id="filter_btn" @onclick="FilterType"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/psychic.png" Type="Pyschic"></Filter></button>
-    <button id="filter_btn" @onclick="FilterType"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/imaginary.png" Type="Imaginary"></Filter></button>
-    <button id="filter_btn" @onclick="FilterType"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Quantum"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterType("Mech"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/mecha.png" Type="Mech"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterType("Biologic"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/biologic.png" Type="Biologic"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterType("Pyschic"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/psychic.png" Type="Pyschic"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterType("Imaginary"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/imaginary.png" Type="Imaginary"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterType("Quantum"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Quantum"></Filter></button>
 </div>
 
 <h4 class="mt-3">Filter by Element:</h4>
 
 <div id="filters">
-    <button id="filter_btn" @onclick="FilterElement"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/feature-icons/physical.png" Type="Physical"></Filter></button>
-    <button id="filter_btn" @onclick="FilterElement"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/feature-icons/fire-dmg.png" Type="Fire"></Filter></button>
-    <button id="filter_btn" @onclick="FilterElement"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/feature-icons/ice-dmg.png" Type="Ice"></Filter></button>
-    <button id="filter_btn" @onclick="FilterElement"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/feature-icons/lightning-dmg.png" Type="Lightning"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterElement("Fire"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/feature-icons/fire-dmg.png" Type="Fire"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterElement("Ice"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/feature-icons/ice-dmg.png" Type="Ice"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterElement("Lightning"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/feature-icons/lightning-dmg.png" Type="Lightning"></Filter></button>
 </div>
 
 <h4 class="mt-3">Filter by Rank:</h4>
 
 <div id="filters">
-    <button id="filter_btn" @onclick="FilterRank"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/rank-icons/s-rank.png" Type="S Rank"></Filter></button>
-    <button id="filter_btn" @onclick="FilterRank"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/rank-icons/a-rank.png" Type="A Rank"></Filter></button>
-    <button id="filter_btn" @onclick="FilterRank"><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/rank-icons/b-rank.png" Type="B Rank"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterRank("S"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/rank-icons/s-rank.png" Type="S Rank"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterRank("A"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/rank-icons/a-rank.png" Type="A Rank"></Filter></button>
+    <button id="filter_btn" @onclick='(async () => await FilterRank("B"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/rank-icons/b-rank.png" Type="B Rank"></Filter></button>
 </div>
 
 <style>
@@ -63,18 +63,12 @@
     protected override async Task OnInitializedAsync() =>
         b = JsonConvert.DeserializeObject<List<Battlesuit>>(await BattlesuitService.GetAsync());
 
-    private void FilterType()
-    {
-        b = b.Where(q => q.Type == "Mech").ToList();
-    }
+    private async Task FilterType(string filter) =>
+        b = JsonConvert.DeserializeObject<List<Battlesuit>>(await BattlesuitService.GetAsync()).Where(q => q.Type == filter).ToList();
 
-    private void FilterElement()
-    {
-        b = b.Where(q => q.Type == "Pyschic").ToList();
-    }
+    private async Task FilterElement(string filter) =>
+        b = JsonConvert.DeserializeObject<List<Battlesuit>>(await BattlesuitService.GetAsync()).Where(q => q.Element == filter).ToList();
 
-    private void FilterRank()
-    {
-        b = b.Where(q => q.Id == 5).ToList();
-    }
+    private async Task FilterRank(string filter) =>
+        b = JsonConvert.DeserializeObject<List<Battlesuit>>(await BattlesuitService.GetAsync()).Where(q => q.Rank == filter).ToList();
 }
