@@ -1,4 +1,4 @@
-# Honkai Wiki - honkai-wiki.net
+# Honkai Wiki - https://roaring-palace.azurewebsites.net
 
 Source files for the honkai-wiki website
 
