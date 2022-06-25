@@ -19,6 +19,10 @@
 </style>
 
 <div id="stigmatas">
+    @if(s is null)
+    {
+        <h3>Loading...</h3>
+    }
     @foreach(var s in s)
     {
         <InfoCard Name="@s.Name" Image="@s.Image"></InfoCard>

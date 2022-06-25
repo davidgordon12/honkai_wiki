@@ -43,6 +43,10 @@
 </div>
 
 <div id="weapons">
+    @if(w is null)
+    {
+        <h3>Loading...</h3>
+    }
     @foreach(var w in w)
     {
         <InfoCard Name="@w.Name" Image="@w.Image"></InfoCard>
