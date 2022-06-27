@@ -12,6 +12,7 @@
     }
 
     .filter_btn {
+        margin-top: 5px;
         display: contents;
     }
 
@@ -30,19 +31,23 @@
 <h4 class="mt-3">Filter by Type:</h4>
 
 <div id="filters">
-    <button class="filter_btn" @onclick='(async () => await FilterType("Pistols"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/biologic.png" Type="Pistols"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Katanas"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/psychic.png" Type="Katanas"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Cannons"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/imaginary.png" Type="Cannons"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Greatswords"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Greatswords"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Crosses"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Crosses"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Gauntlets"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Gauntlets"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Scythes"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Scythes"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Lances"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Lances"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Bows"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Bows"></Filter></button>
-    <button class="filter_btn" @onclick='(async () => await FilterType("Chakrams"))'><Filter Icon="https://public-assets.abyss-lab.app/honkai3rd/type-icons/quantum.png" Type="Chakrams"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Pistols"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/5/55/Pistols_%28Type%29.png" Type="Pistols"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Katanas"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/3/3b/Katanas_%28Type%29.png" Type="Katanas"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Cannons"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/b/b7/Cannons_%28Type%29.png" Type="Cannons"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Crosses"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/6/63/Crosses_%28Type%29.png" Type="Crosses"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Greatswords"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/e/e3/Greatswords_%28Type%29.png" Type="Greatswords"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Gauntlets"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/0/0f/Gauntlets_%28Type%29.png" Type="Gauntlets"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Scythes"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/a/a7/Scythes_%28Type%29.png" Type="Scythes"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Lances"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/7/7e/Lances_%28Type%29.png" Type="Lances"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Bows"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/f/f0/Bows_%28Type%29.png" Type="Bows"></Filter></button>
+    <button class="filter_btn" @onclick='(async () => await FilterType("Chakrams"))'><Filter Icon="https://static.wikia.nocookie.net/honkaiimpact3_gamepedia_en/images/8/80/Chakrams_%28Type%29.png" Type="Chakrams"></Filter></button>
 </div>
 
 <div id="weapons">
+    @if(w is null)
+    {
+        <h3>Loading...</h3>
+    }
     @foreach(var w in w)
     {
         <InfoCard Name="@w.Name" Image="@w.Image"></InfoCard>

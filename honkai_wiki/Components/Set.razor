@@ -1,5 +1,18 @@
 ﻿// flex 3 images, stigmata set name, set ranking (stars)
+@using honkai_wiki_api.Models
+
+<div id="set">
+    <div id="stigmata">
+        @foreach (var s in Stigmatas)
+        {
+            <InfoCard Name="@s.Name" Image="@s.Image"></InfoCard>
+        }
+    </div>
+    <h4>@Name</h4>
+</div>
 
 @code {
-
+    [Parameter]
+    public string Name { get; set; }
+    public List<Stigmata> Stigmatas { get; set; }
 }
