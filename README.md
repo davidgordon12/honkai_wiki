@@ -8,3 +8,5 @@ Source files for the honkai-wiki website
 - Reusable Components
 - SPA Web Page
 - Working with JSON (Serialization and Deserialization)
+
+It will not be completed or worked on further.
