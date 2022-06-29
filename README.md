@@ -1,6 +1,5 @@
 # Honkai Wiki - https://roaring-palace.azurewebsites.net
 
-<<<<<<< HEAD
 Source files for the honkai-wiki website!
 =======
 # UNDER CONSTRUCTION
