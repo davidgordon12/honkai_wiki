@@ -10,3 +10,6 @@ Source files for the honkai-wiki website
 - Working with JSON (Serialization and Deserialization)
 
 It will not be completed or worked on further.
+
+API source code
+https://github.com/tehtko/honkai_wiki-api
